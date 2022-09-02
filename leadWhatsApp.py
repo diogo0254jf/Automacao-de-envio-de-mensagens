@@ -26,7 +26,7 @@ for i, mensagem in enumerate(contatos["Mensagem"]):
     numero = contatos.loc[i, "Numero"]
     
     texto = urllib.parse.quote(f"{mensagems}")
-    link = f"https://web.whatsapp.com/send?phone={numero}&text={texto}"
+    link = f"https://web.whatsapp.com/send?phone=55{numero}&text={texto}"
 
     navegador.get(link)
     time.sleep(5)
@@ -40,7 +40,7 @@ for i, mensagem in enumerate(contatos["Mensagem"]):
 
         navegador.find_element(By.XPATH, '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[2]/button/span').click()
 
-        numeroRand = random.randint(10)
+        numeroRand = random.randint(5,30)
         time.sleep(numeroRand)
     else:
         time.sleep(5)
